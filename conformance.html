@@ -535,35 +535,35 @@ CDL.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The <strong><code>valid_range</code></strong> attribute must not be present if the valid_min and/or
-valid_max attributes are present.</p>
+<p>The <strong><code>valid_range</code></strong> attribute must not be present if the <strong><code>valid_min</code></strong> and/or
+<strong><code>valid_max</code></strong> attributes are present.</p>
 </li>
 <li>
-<p>The _FillValue attribute must be the same type as its associated
+<p>The <strong><code>_FillValue</code></strong> attribute must be the same type as its associated
 variable.</p>
 </li>
 <li>
-<p>The missing_value attribute must be the same type as its associated
+<p>The <strong><code>missing_value</code></strong> attribute must be the same type as its associated
 variable.</p>
 </li>
 <li>
-<p>The actual_range attribute must be of the same type as its associated
-variable unless there is a scale_factor and/or add_offset attribute, in
+<p>The <strong><code>actual_range</code></strong> attribute must be of the same type as its associated
+variable unless there is a <strong><code>scale_factor</code></strong> and/or <strong><code>add_offset</code></strong> attribute, in
 which case it must be of the same type as those attributes.</p>
 </li>
 <li>
-<p>The actual_range attribute must have two elements, of which the first
+<p>The <strong><code>actual_range</code></strong> attribute must have two elements, of which the first
 exactly equals the minimum non-missing value occurring in the associated
-variable after any scale_factor and add_offset are applied, and the
+variable after any <strong><code>scale_factor</code></strong> and <strong><code>add_offset</code></strong> are applied, and the
 second exactly equals the maximum value in the same way.</p>
 </li>
 <li>
-<p>There must not be an actual_range attribute if all the data values of
+<p>There must not be an <strong><code>actual_range</code></strong> attribute if all the data values of
 the associated variable equal the missing value.</p>
 </li>
 <li>
-<p>If both the actual_range and valid_range/valid_min/valid_max are
-specified, the values of the actual_range must be valid values.</p>
+<p>If both the <strong><code>actual_range</code></strong> and <strong><code>valid_range/valid_min/valid_max</code></strong> are
+specified, the values of the <strong><code>actual_range</code></strong> must be valid values.</p>
 </li>
 </ul>
 </div>
@@ -573,11 +573,11 @@ specified, the values of the actual_range must be valid values.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The value of the _FillValue attribute should not be within a specified
+<p>The value of the <strong><code>_FillValue</code></strong> attribute should not be within a specified
 valid range.</p>
 </li>
 <li>
-<p>If both missing_value and _FillValue be used, they should have the
+<p>If both <strong><code>missing_value</code></strong> and <strong><code>_FillValue</code></strong> be used, they should have the
 same value.</p>
 </li>
 </ul>
@@ -592,7 +592,7 @@ same value.</p>
 <ul>
 <li>
 <p>Files that conform to the CF version 1.5 conventions must indicate
-this by setting the global Conventions attribute to the string value
+this by setting the global <strong><code>Conventions</code></strong> attribute to the string value
 "CF-1.5".</p>
 </li>
 </ul>
@@ -606,7 +606,7 @@ this by setting the global Conventions attribute to the string value
 <div class="ulist">
 <ul>
 <li>
-<p>The title, history, institution, source, references, and comment
+<p>The <strong><code>title</code></strong>, <strong><code>history</code></strong>, <strong><code>institution</code></strong>, <strong><code>source</code></strong>, <strong><code>references</code></strong>, and <strong><code>comment</code></strong>
 attributes are all type string.</p>
 </li>
 </ul>
@@ -617,7 +617,7 @@ attributes are all type string.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The title and history attributes are only defined as global
+<p>The <strong><code>title</code></strong> and <strong><code>history</code></strong> attributes are only defined as global
 attributes. If they are used as per variable attributes a CF compliant
 application should treat them exactly as it would treat any other
 unrecognized attribute.</p>
@@ -633,7 +633,7 @@ unrecognized attribute.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>All variables should use either the long_name or the standard_name
+<p>All variables should use either the <strong><code>long_name</code></strong> or the <strong><code>standard_name</code></strong>
 attributes to describe their contents. Exceptions are boundary and
 climatology variables.</p>
 </li>
@@ -648,7 +648,7 @@ climatology variables.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The units attribute is required for all variables that represent
+<p>The <strong><code>units</code></strong> attribute is required for all variables that represent
 dimensional quantities (except for boundary variables defined in
 <a href="http://cfconventions.org/cf-conventions/cf-conventions.html#cell-boundaries">section 7.1</a>
 and climatology variables defined in section
@@ -656,16 +656,16 @@ and climatology variables defined in section
 ).</p>
 </li>
 <li>
-<p>The type of the units attribute is a string that must be recognizable
-by the udunits package. Exceptions are the units level, layer, and
-sigma_level.</p>
+<p>The type of the <strong><code>units</code></strong> attribute is a string that must be recognizable
+by the udunits package. Exceptions are the units <strong><code>level, layer, and
+sigma_level</code></strong>.</p>
 </li>
 <li>
-<p>The units of a variable that specifies a standard_name must be
+<p>The <strong><code>units</code></strong> of a variable that specifies a <strong><code>standard_name</code></strong> must be
 physically equivalent to the canonical units given in the standard name
-table, as modified by the standard_name modifier, if there is one,
+table, as modified by the <strong><code>standard_name</code></strong> modifier, if there is one,
 according to Appendix C, and then modified by all the methods listed in
-order by the cell_methods attribute, if one is present, according to
+order by the <strong><code>cell_methods</code></strong> attribute, if one is present, according to
 Appendix E.</p>
 </li>
 </ul>
@@ -676,7 +676,7 @@ Appendix E.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The units level, layer, and sigma_level are deprecated.</p>
+<p>The units <strong><code>level</code></strong>, <strong><code>layer</code></strong>, and <strong><code>sigma_level</code></strong> are deprecated.</p>
 </li>
 </ul>
 </div>
@@ -689,7 +689,7 @@ Appendix E.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The standard_name attribute takes a string value comprised of a
+<p>The <strong><code>standard_name</code></strong> attribute takes a string value comprised of a
 standard name optionally followed by one or more blanks and a standard
 name modifier.</p>
 </li>
@@ -712,39 +712,39 @@ Appendix C, Standard Name Modifiers.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The flag_values attribute must have the same type as the variable to
+<p>The <strong><code>flag_values</code></strong> attribute must have the same type as the variable to
 which it is attached.</p>
 </li>
 <li>
-<p>If the flag_values attribute is present then the flag_meanings
+<p>If the <strong><code>flag_values</code></strong> attribute is present then the <strong><code>flag_meanings</code></strong>
 attribute must be specified.</p>
 </li>
 <li>
-<p>The type of the flag_meanings attribute is a string whose value is a
+<p>The type of the <strong><code>flag_meanings</code></strong> attribute is a string whose value is a
 blank separated list of words or phrases,  each consisting of characters
 from the alphanumeric set and the following five: '_', '-', '.', '+',
 '@'.</p>
 </li>
 <li>
-<p>The number of flag_values attribute values must equal the number of
-words or phrases appearing in the flag_meanings string.</p>
+<p>The number of <strong><code>flag_values</code></strong> attribute values must equal the number of
+words or phrases appearing in the <strong><code>flag_meanings</code></strong> string.</p>
 </li>
 <li>
-<p>The number of flag_masks attribute values must equal the number of
-words or phrases appearing in the flag_meanings string.</p>
+<p>The number of <strong><code>flag_masks</code></strong> attribute values must equal the number of
+words or phrases appearing in the <strong><code>flag_meanings</code></strong> string.</p>
 </li>
 <li>
-<p>Variables with a flag_masks attribute must have a type that is
+<p>Variables with a <strong><code>flag_masks</code></strong> attribute must have a type that is
 compatible with bit field expression (char, byte, short and int), not
-floating-point (float, real, double), and the flag_masks attribute must
+floating-point (float, real, double), and the <strong><code>flag_masks</code></strong> attribute must
 have the same type.</p>
 </li>
 <li>
-<p>The flag_masks attribute values must be non-zero.</p>
+<p>The <strong><code>flag_masks</code></strong> attribute values must be non-zero.</p>
 </li>
 <li>
-<p>The flag_values attribute values must be mutually exclusive among the
-set of flag_values attribute values defined for that variable.</p>
+<p>The <strong><code>flag_values</code></strong> attribute values must be mutually exclusive among the
+set of <strong><code>flag_values</code></strong> attribute values defined for that variable.</p>
 </li>
 </ul>
 </div>
@@ -754,9 +754,9 @@ set of flag_values attribute values defined for that variable.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>When flag_masks and flag_values are both defined, the Boolean AND of
-each entry in flag_values with its corresponding entry in flag_masks
-should equal the flag_values entry, ie, the mask selects all the bits
+<p>When <strong><code>flag_masks</code></strong> and <strong><code>flag_values</code></strong> are both defined, the Boolean AND of
+each entry in <strong><code>flag_values</code></strong> with its corresponding entry in <strong><code>flag_masks</code></strong>
+should equal the <strong><code>flag_values</code></strong> entry, ie, the mask selects all the bits
 required to express the value.</p>
 </li>
 </ul>
@@ -770,21 +770,21 @@ required to express the value.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The axis attribute may only be attached to a coordinate variable.</p>
+<p>The <strong><code>axis</code></strong> attribute may only be attached to a coordinate variable.</p>
 </li>
 <li>
-<p>The only legal values of axis are X, Y, Z, and T (case insensitive).</p>
+<p>The only legal values of axis are <strong><code>X</code></strong>, <strong><code>Y</code></strong>, <strong><code>Z</code></strong>, and <strong><code>T</code></strong> (case insensitive).</p>
 </li>
 <li>
-<p>The axis attribute must be consistent with the coordinate type deduced
-from units and positive.</p>
+<p>The <strong><code>axis</code></strong> attribute must be consistent with the coordinate type deduced
+from <strong><code>units</code></strong> and <strong><code>positive</code></strong>.</p>
 </li>
 <li>
-<p>The axis attribute is not allowed for auxiliary coordinate variables.</p>
+<p>The <strong><code>axis</code></strong> attribute is not allowed for auxiliary coordinate variables.</p>
 </li>
 <li>
 <p>A data variable must not have more than one coordinate variable with a
-particular value of the axis attribute.</p>
+particular value of the <strong><code>axis</code></strong> attribute.</p>
 </li>
 </ul>
 </div>
@@ -797,7 +797,7 @@ particular value of the axis attribute.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The only legal values for the positive attribute are up or down (case
+<p>The only legal values for the <strong><code>positive</code></strong> attribute are <strong><code>up</code></strong> or <strong><code>down</code></strong> (case
 insensitive).</p>
 </li>
 </ul>
@@ -811,14 +811,14 @@ insensitive).</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The formula_terms attribute is only allowed on a coordinate variable
-which has a standard_name listed in Appendix C.</p>
+<p>The <strong><code>formula_terms</code></strong> attribute is only allowed on a coordinate variable
+which has a <strong><code>standard_name</code></strong> listed in Appendix C.</p>
 </li>
 <li>
-<p>The type of the formula_terms attribute is a string whose value is
-list of blank separated word pairs in the form term: var. The legal
-values term are contained in Appendix C for each valid standard_name.
-The values of var must be variables that exist in the file.</p>
+<p>The type of the <strong><code>formula_terms</code></strong> attribute is a string whose value is
+list of blank separated word pairs in the form <strong><code>term: var</code></strong>. The legal
+values <strong><code>term</code></strong> are contained in Appendix C for each valid <strong><code>standard_name</code></strong>.
+The values of <strong><code>var</code></strong> must be variables that exist in the file.</p>
 </li>
 </ul>
 </div>
@@ -865,25 +865,25 @@ caution.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The attributes calendar, month_lengths, leap_year, and leap_month may
+<p>The attributes <strong><code>calendar</code></strong>, <strong><code>month_lengths</code></strong>, <strong><code>leap_year</code></strong>, and <strong><code>leap_month</code></strong> may
 only be attached to time coordinate variables.</p>
 </li>
 <li>
-<p>The standardized values of the calendar attribute are gregorian,
-standard, proleptic_gregorian, noleap, 365_day, all_leap, 366_day,
-360_day, julian, and none (case insensitive). If the calendar attribute
-is given a non-standard value, then the attribute month_lengths is
-required, along with leap_year and leap_month as appropriate.</p>
+<p>The standardized values of the calendar attribute are <strong><code>gregorian</code></strong>,
+<strong><code>standard</code></strong>, <strong><code>proleptic_gregorian</code></strong>, <strong><code>noleap</code></strong>, <strong><code>365_day</code></strong>, <strong><code>all_leap</code></strong>, <strong><code>366_day</code></strong>,
+<strong><code>360_day</code></strong>, <strong><code>julian</code></strong>, and <strong><code>none</code></strong> (case insensitive). If the <strong><code>calendar</code></strong> attribute
+is given a non-standard value, then the attribute <strong><code>month_lengths</code></strong> is
+required, along with <strong><code>leap_year</code></strong> and <strong><code>leap_month</code></strong> as appropriate.</p>
 </li>
 <li>
-<p>The type of the month_lengths attribute must be an integer array of
+<p>The type of the <strong><code>month_lengths</code></strong> attribute must be an integer array of
 size 12.</p>
 </li>
 <li>
-<p>The values of the leap_month attribute must be in the range 1-12.</p>
+<p>The values of the <strong><code>leap_month</code></strong> attribute must be in the range 1-12.</p>
 </li>
 <li>
-<p>The values of the leap_year and leap_month attributes are integer
+<p>The values of the <strong><code>leap_year</code></strong> and <strong><code>leap_month</code></strong> attributes are integer
 scalars.</p>
 </li>
 </ul>
@@ -894,8 +894,8 @@ scalars.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The attribute leap_month should not appear unless the attribute
-leap_year is present.</p>
+<p>The attribute <strong><code>leap_month</code></strong> should not appear unless the attribute
+<strong><code>leap_year</code></strong> is present.</p>
 </li>
 <li>
 <p>The time coordinate should not cross the date 1582-10-15 when the
@@ -920,7 +920,7 @@ or time dimensions must have corresponding coordinate variables.</p>
 (increasing or decreasing).</p>
 </li>
 <li>
-<p>A coordinate variable must not have the _FillValue or missing_value
+<p>A coordinate variable must not have the <strong><code>_FillValue</code></strong> or <strong><code>missing_value</code></strong>
 attributes.</p>
 </li>
 <li>
@@ -949,11 +949,11 @@ the name of any of its dimensions.</p>
 </li>
 <li>
 <p>All horizontal coordinate variables (in the Unidata sense) should have
-an axis attribute.</p>
+an <strong><code>axis</code></strong> attribute.</p>
 </li>
 <li>
 <p>All horizontal coordinate variables (in the unidata sense) should have
-an axis attribute.</p>
+an <strong><code>axis</code></strong> attribute.</p>
 </li>
 </ul>
 </div>
@@ -967,7 +967,7 @@ an axis attribute.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The type of the grid_mapping attribute is a string whose value is a
+<p>The type of the <strong><code>grid_mapping</code></strong> attribute is a string whose value is a
 single variable name.</p>
 </li>
 <li>
@@ -975,8 +975,8 @@ single variable name.</p>
 exist in the file.</p>
 </li>
 <li>
-<p>The grid mapping variable must have the grid_mapping_name attribute.
-The legal values for the grid_mapping_name attribute are contained in
+<p>The grid mapping variable must have the <strong><code>grid_mapping_name</code></strong> attribute.
+The legal values for the <strong><code>grid_mapping_name</code></strong> attribute are contained in
 Appendix F.</p>
 </li>
 <li>
@@ -984,7 +984,7 @@ Appendix F.</p>
 specified in Table 1 of Appendix F.<br></p>
 </li>
 <li>
-<p>If present, the crs_wkt attribute must be a text string conforming to
+<p>If present, the <strong><code>crs_wkt</code></strong> attribute must be a text string conforming to
 the CRS WKT specification described in reference [OGC_CTS].</p>
 </li>
 </ul>
@@ -1008,7 +1008,7 @@ the CRS WKT specification described in reference [OGC_CTS].</p>
 <div class="ulist">
 <ul>
 <li>
-<p>A variable of character type that is named by a coordinates attribute
+<p>A variable of character type that is named by a <strong><code>coordinates</code></strong> attribute
 is a label variable. This variable must have one or two dimensions. The
 trailing (CDL order) or sole dimension is for the maximum string length.
 If there are two dimensions, leading dimension (CDL order) must match
@@ -1025,7 +1025,7 @@ one of those of the data variable.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The type of the bounds attribute is a string whose value is a single
+<p>The type of the <strong><code>bounds</code></strong> attribute is a string whose value is a single
 variable name. The specified variable must exist in the file.</p>
 </li>
 <li>
@@ -1037,7 +1037,7 @@ number of vertices in a cell.</p>
 <p>A boundary variable must be a numeric data type.</p>
 </li>
 <li>
-<p>If a boundary variable has units or standard_name attributes, they
+<p>If a boundary variable has <strong><code>units</code></strong> or <strong><code>standard_name</code></strong> attributes, they
 must agree with those of its associated variable.</p>
 </li>
 </ul>
@@ -1053,7 +1053,7 @@ should lie within, or on the boundary, of the cells specified by the
 associated boundary variable.</p>
 </li>
 <li>
-<p>Boundary variables should not have the _FillValue or missing_value
+<p>Boundary variables should not have the <strong><code>_FillValue</code></strong> or <strong><code>missing_value</code></strong>
 attributes.</p>
 </li>
 </ul>
@@ -1067,9 +1067,9 @@ attributes.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The type of the cell_measures attribute is a string whose value is
-list of blank separated word pairs in the form measure: var. The valid
-values for measure are area or volume. The var token specifies a
+<p>The type of the <strong><code>cell_measures</code></strong> attribute is a string whose value is
+list of blank separated word pairs in the form <strong><code>measure: var</code></strong>. The valid
+values for <strong><code>measure</code></strong> are <strong><code>area</code></strong> or <strong><code>volume</code></strong>. The <strong><code>var</code></strong> token specifies a
 variable that must exist in the file. The dimensions of the variable
 specified by var must be the same as, or be a subset of, the dimensions
 of the variable to which they are related.</p>
@@ -1090,7 +1090,7 @@ volume measures.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The type of the cell_methods attribute is a string whose value is one
+<p>The type of the <strong><code>cell_methods</code></strong> attribute is a string whose value is one
 or more blank separated word lists, each with the form</p>
 </li>
 </ul>
@@ -1101,13 +1101,13 @@ or more blank separated word lists, each with the form</p>
 </div>
 </div>
 <div class="paragraph">
-<p>where brackets indicate optional words. The valid values for dim1 [dim2
-[dim3 &#8230;&#8203;] ] are the names of dimensions of the data variable, names of
+<p>where brackets indicate optional words. The valid values for <strong><code>dim1</code></strong> [<strong><code>dim2</code></strong>
+[<strong><code>dim3</code></strong> &#8230;&#8203;] ] are the names of dimensions of the data variable, names of
 scalar coordinate variables of the data variable, valid standard names,
-or the word area. The valid values of method are contained in Appendix
-E. The valid values for type1 are the name of a string-valued auxiliary
-or scalar coordinate variable with a standard_name of area_type, or any
-string value allowed for a variable of standard_name of area_type. If
+or the word area. The valid values of <strong><code>method</code></strong> are contained in Appendix
+E. The valid values for <strong><code>type1</code></strong> are the name of a string-valued auxiliary
+or scalar coordinate variable with a <strong><code>standard_name</code></strong> of <strong><code>area_type</code></strong>, or any
+string value allowed for a variable of <strong><code>standard_name</code></strong> of <strong><code>area_type</code></strong>. If
 type2 is a string-valued auxiliary coordinate variable, it is not
 allowed to have a leading dimension (the number of strings) of more than
 one. When the method refers to a climatological time axis, the suffixes
@@ -1116,26 +1116,20 @@ for within and over may be appended.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>A given dimension name may only occur once in a cell_methods string.
+<p>A given dimension name may only occur once in a <strong><code>cell_methods</code></strong> string.
 An exception is a climatological time dimension.</p>
 </li>
 <li>
-<p>The comment, if present, must take the form</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p><code>([interval: value unit [interval: &#8230;&#8203;] comment:] <em>remainder</em> )</code></p>
-</li>
-</ul>
-</div>
+<p>The comment, if present, must take the form
+<strong><code>([interval</code></strong>: value unit [<strong><code>interval</code></strong>: &#8230;&#8203;] comment:] <em>remainder</em> )</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>The <em>remainder</em> text is not standardized. If no interval clauses are
+<p>The <em>remainder</em> text is not standardized. If no <strong><code>interval</code></strong> clauses are
 present, the entire comment is therefore not standardized. There may be
-zero interval clauses, one interval clause, or exactly as many interval
-clauses as there are dims to which the method applies. The <em>value</em> must
+zero <strong><code>interval</code></strong> clauses, one <strong><code>interval clause, or exactly as many </strong>`interval</code><strong>
+clauses as there are </strong><code>dim</code>**s to which the method applies. The <em>value</em> must
 be a valid number and the <em>unit</em> a string that is recognizable by the
 udunits package.</p>
 </div>
@@ -1147,14 +1141,14 @@ udunits package.</p>
 <li>
 <p>If a data variable has any dimensions or scalar coordinate variables
 referring to horizontal, vertical or time dimensions, it should have a
-cell_methods attribute with an entry for each of these spatiotemporal
+<strong><code>cell_methods</code></strong> attribute with an entry for each of these spatiotemporal
 dimensions or scalar coordinate variables. (The horizontal dimensions
 may be covered by an area entry.)</p>
 </li>
 <li>
 <p>Except for entries whose cell method is point, all numeric coordinate
-variables and scalar coordinate variables named by cell_methods should
-have bounds or climatology attributes.</p>
+variables and scalar coordinate variables named by <strong><code>cell_methods</code></strong> should
+have <strong><code>bounds</code></strong> or <strong><code>climatology</code></strong> attributes.</p>
 </li>
 </ul>
 </div>
@@ -1167,11 +1161,11 @@ have bounds or climatology attributes.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The climatology attribute may only be attached to a time coordinate
+<p>The <strong><code>climatology</code></strong> attribute may only be attached to a time coordinate
 variable.</p>
 </li>
 <li>
-<p>The type of the climatology attribute is a string whose value is a
+<p>The type of the <strong><code>climatology</code></strong> attribute is a string whose value is a
 single variable name. The specified variable must exist in the file.</p>
 </li>
 <li>
@@ -1183,11 +1177,11 @@ size 2.</p>
 <p>A climatology variable must be a numeric data type.</p>
 </li>
 <li>
-<p>If a climatology variable has units, standard_name, or calendar
+<p>If a climatology variable has <strong><code>units</code></strong>, <strong><code>standard_name</code></strong>, or calendar
 attributes, they must agree with those of its associated variable.</p>
 </li>
 <li>
-<p>A climatology variable must not have _FillValue or missing_value
+<p>A climatology variable must not have <strong><code>_FillValue</code></strong> or <strong><code>missing_value</code></strong>
 attributes.</p>
 </li>
 </ul>
@@ -1201,15 +1195,15 @@ attributes.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The scale_factor and add_offset attributes must be the same numeric
+<p>The <strong><code>scale_factor</code></strong> and <strong><code>add_offset</code></strong> attributes must be the same numeric
 data type.</p>
 </li>
 <li>
-<p>If scale_factor and add_offset are a different type than the variable,
+<p>If <strong><code>scale_factor</code></strong> and <strong><code>add_offset</code></strong> are a different type than the variable,
 then they must be either type float or type double.</p>
 </li>
 <li>
-<p>If scale_factor and add_offset are a different type than the variable,
+<p>If <strong><code>scale_factor</code></strong> and <strong><code>add_offset</code></strong> are a different type than the variable,
 then the variable must be type byte, short or int.</p>
 </li>
 </ul>
@@ -1220,7 +1214,7 @@ then the variable must be type byte, short or int.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>If scale_factor and add_offset are type float, the variable should not
+<p>If <strong><code>scale_factor</code></strong> and <strong><code>add_offset</code></strong> are type float, the variable should not
 be of type int.</p>
 </li>
 </ul>
@@ -1234,11 +1228,11 @@ be of type int.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The compress attribute may only be attached to a coordinate variable
+<p>The <strong><code>compress</code></strong> attribute may only be attached to a coordinate variable
 with an integer data type.</p>
 </li>
 <li>
-<p>The type of the compress attribute is a string whose value is a blank
+<p>The type of the <strong><code>compress</code></strong> attribute is a string whose value is a blank
 separated list of dimension names. The specified dimensions must exist
 in the file.</p>
 </li>
@@ -1260,7 +1254,7 @@ sizes minus 1 (CDL index conventions).</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-04-13 22:49:07 UTC
+Last updated 2017-05-09 21:31:03 UTC
 </div>
 </div>
 </body>
