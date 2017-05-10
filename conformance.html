@@ -631,6 +631,27 @@ unrecognized attribute.</p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="_2_6_3_external_variables">2.6.3 External variables</h3>
+<div class="paragraph">
+<p><strong>Requirements:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong><code>external_variables</code></strong> attribute is of string type and contains a blank-separated
+list of variable names.</p>
+</li>
+<li>
+<p>No variable named by <strong><code>external_variables</code></strong> is allowed in the file.</p>
+</li>
+<li>
+<p>In its section 7.2, change "that must exist in the file" to "that must either exist
+in the file or be named by the <strong><code>external_variables</code></strong> attribute".</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
 <h3 id="description-of-the-data">3 Description of the Data</h3>
 <div class="paragraph">
 <p><strong>Recommendations:</strong></p>
@@ -709,6 +730,10 @@ Appendix C, Standard Name Modifiers.</p>
 <li>
 <p>Use of the <strong><code>standard_name modifiers</code></strong> <strong><code>status_flag</code></strong> and <strong><code>number_of_observations</code></strong>
 is deprecated, and the corresponding <strong><code>standard_names</code></strong> are recommended instead.</p>
+</li>
+<li>
+<p>If a variable has a <strong><code>standard_name</code></strong> of <strong><code>region</code></strong> or <strong><code>area_type</code></strong>, it must have value(s)
+from the permitted list.</p>
 </li>
 </ul>
 </div>
@@ -818,7 +843,7 @@ definition of the <strong><code>standard_name</code></strong>, if both are provi
 </div>
 </div>
 <div class="sect2">
-<h3 id="dimensionless-vertical-coordinates">4.3.2 Dimensionless Vertical Coordinates</h3>
+<h3 id="dimensionless-vertical-coordinates">4.3.2 Parameterized Vertical Coordinate</h3>
 <div class="paragraph">
 <p><strong>Requirements:</strong></p>
 </div>
@@ -833,6 +858,22 @@ which has a <strong><code>standard_name</code></strong> listed in Appendix C.</p
 list of blank separated word pairs in the form <strong><code>term: var</code></strong>. The legal
 values <strong><code>term</code></strong> are contained in Appendix C for each valid <strong><code>standard_name</code></strong>.
 The values of <strong><code>var</code></strong> must be variables that exist in the file.</p>
+</li>
+<li>
+<p>Where indicated by the appropriate definition in Appendix D, the <strong><code>standard_name</code></strong>
+attributes of variables named by the <strong><code>formula_terms</code></strong> attribute must be consistent
+with the <strong><code>standard_name</code></strong> of the coordinate variable it is attached to, according to
+the appropriate definition in Appendix D.</p>
+</li>
+<li>
+<p>The <strong><code>computed_standard_name</code></strong> attribute is only allowed on a coordinate variable
+which has a <strong><code>formula_terms</code></strong> attribute.</p>
+</li>
+<li>
+<p>The <strong><code>computed_standard_name</code></strong> attribute is a string whose value must be consistent
+with the <strong><code>standard_name</code></strong> of the coordinate variable it is attached to, and in some cases
+also with the <strong><code>standard_name</code></strong> attributes of variables named by the <strong><code>formula_terms</code></strong> attribute,
+according to the appropriate definition in Appendix D.</p>
 </li>
 </ul>
 </div>
@@ -990,14 +1031,14 @@ the following form, in which brackets indicate optional text:</p>
 </div>
 </li>
 <li>
-<p>Note that in its simplest form the attribute comprises just a <em>grid_mapping_name</em> as a single word.</p>
+<p>Note that in its simplest form the attribute comprises just a grid_mapping_name as a single word.</p>
 </li>
 <li>
-<p>Each <em>grid_mapping_name</em> is the name of a variable (known as a grid mapping variable), which must
+<p>Each grid_mapping_name is the name of a variable (known as a grid mapping variable), which must
 exist in the file.</p>
 </li>
 <li>
-<p>Each <em>coord_var</em> is the name of a coordinate variable or auxiliary coordinate variable, which must
+<p>Each coord_var is the name of a coordinate variable or auxiliary coordinate variable, which must
 exist in the file. If it is an auxiliary coordinate variable, it must be listed in the coordinates attribute.</p>
 </li>
 <li>
@@ -1283,7 +1324,7 @@ sizes minus 1 (CDL index conventions).</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-05-10 17:06:45 UTC
+Last updated 2017-05-10 19:16:49 UTC
 </div>
 </div>
 </body>
