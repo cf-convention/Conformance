@@ -595,11 +595,6 @@ same value.</p>
 this by setting the global <strong><code>Conventions</code></strong> attribute to the string value
 "CF-1.5".</p>
 </li>
-<li>
-<p>The Conventions attribute may be a single text string containing a list
-of convention names separated by blank space or commas, one of which shall
-be the full CF string as described above.</p>
-</li>
 </ul>
 </div>
 </div>
@@ -705,10 +700,6 @@ name table.</p>
 <li>
 <p>The legal values for the standard name modifier are contained in
 Appendix C, Standard Name Modifiers.</p>
-</li>
-<li>
-<p>Use of the <strong><code>standard_name modifiers</code></strong> <strong><code>status_flag</code></strong> and <strong><code>number_of_observations</code></strong>
-is deprecated, and the corresponding <strong><code>standard_names</code></strong> are recommended instead.</p>
 </li>
 </ul>
 </div>
@@ -985,14 +976,14 @@ the following form, in which brackets indicate optional text:</p>
 </div>
 </li>
 <li>
-<p>Note that in its simplest form the attribute comprises just a <strong><code>grid_mapping_name</code></strong> as a single word.</p>
+<p>Note that in its simplest form the attribute comprises just a <em>grid_mapping_name</em> as a single word.</p>
 </li>
 <li>
-<p>Each <strong><code>grid_mapping_name</code></strong> is the name of a variable (known as a grid mapping variable), which must
+<p>Each <em>grid_mapping_name</em> is the name of a variable (known as a grid mapping variable), which must
 exist in the file.</p>
 </li>
 <li>
-<p>Each <strong><code>coord_var</code></strong> is the name of a coordinate variable or auxiliary coordinate variable, which must
+<p>Each <em>coord_var</em> is the name of a coordinate variable or auxiliary coordinate variable, which must
 exist in the file. If it is an auxiliary coordinate variable, it must be listed in the coordinates attribute.</p>
 </li>
 <li>
@@ -1007,13 +998,6 @@ specified in Table 1 of Appendix F.<br></p>
 <li>
 <p>If present, the <strong><code>crs_wkt</code></strong> attribute must be a text string conforming to
 the CRS WKT specification described in reference [OGC_CTS].</p>
-</li>
-<li>
-<p><strong><code>reference_ellipsoid_name</code></strong>, <strong><code>prime_meridian_name</code></strong>, <strong><code>horizontal_datum_name</code></strong> and
-<strong><code>geographic_crs_name</code></strong> must be all defined if any one is defined.</p>
-</li>
-<li>
-<p>If <strong><code>projected_crs_name</code></strong> is defined then <strong><code>geographic_crs_name</code></strong> must be also.</p>
 </li>
 </ul>
 </div>
@@ -1278,7 +1262,7 @@ sizes minus 1 (CDL index conventions).</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-05-10 16:55:30 UTC
+Last updated 2017-05-10 16:58:42 UTC
 </div>
 </div>
 </body>
