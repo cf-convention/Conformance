@@ -967,15 +967,27 @@ an <strong><code>axis</code></strong> attribute.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The type of the <strong><code>grid_mapping</code></strong> attribute is a string whose value is a
-single variable name.</p>
+<p>The type of the <strong><code>grid_mapping</code></strong> attribute is a string whose value is of
+the following form, in which brackets indicate optional text:</p>
+<div class="literalblock">
+<div class="content">
+<pre>grid_mapping_name[: coord_var [coord_var ...]] [grid_mapping_name: [coord_var ... ]]</pre>
+</div>
+</div>
 </li>
 <li>
-<p>The specified variable name (known as a grid mapping variable) must
+<p>Note that in its simplest form the attribute comprises just a <strong><code>grid_mapping_name</code></strong> as a single word.</p>
+</li>
+<li>
+<p>Each <strong><code>grid_mapping_name</code></strong> is the name of a variable (known as a grid mapping variable), which must
 exist in the file.</p>
 </li>
 <li>
-<p>The grid mapping variable must have the <strong><code>grid_mapping_name</code></strong> attribute.
+<p>Each <strong><code>coord_var</code></strong> is the name of a coordinate variable or auxiliary coordinate variable, which must
+exist in the file. If it is an auxiliary coordinate variable, it must be listed in the coordinates attribute.</p>
+</li>
+<li>
+<p>The grid mapping variables must have the <strong><code>grid_mapping_name</code></strong> attribute.
 The legal values for the <strong><code>grid_mapping_name</code></strong> attribute are contained in
 Appendix F.</p>
 </li>
@@ -995,7 +1007,7 @@ the CRS WKT specification described in reference [OGC_CTS].</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The grid mapping variable should have 0 dimensions.</p>
+<p>The grid mapping variables should have 0 dimensions.</p>
 </li>
 </ul>
 </div>
@@ -1250,7 +1262,7 @@ sizes minus 1 (CDL index conventions).</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-05-09 22:27:18 UTC
+Last updated 2017-05-10 16:19:53 UTC
 </div>
 </div>
 </body>
