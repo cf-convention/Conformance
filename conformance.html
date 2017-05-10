@@ -1008,6 +1008,13 @@ specified in Table 1 of Appendix F.<br></p>
 <p>If present, the <strong><code>crs_wkt</code></strong> attribute must be a text string conforming to
 the CRS WKT specification described in reference [OGC_CTS].</p>
 </li>
+<li>
+<p><strong><code>reference_ellipsoid_name</code></strong>, <strong><code>prime_meridian_name</code></strong>, <strong><code>horizontal_datum_name</code></strong> and
+<strong><code>geographic_crs_name</code></strong> must be all defined if any one is defined.</p>
+</li>
+<li>
+<p>If <strong><code>projected_crs_name</code></strong> is defined then <strong><code>geographic_crs_name</code></strong> must be also.</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -1271,7 +1278,7 @@ sizes minus 1 (CDL index conventions).</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-05-10 16:46:25 UTC
+Last updated 2017-05-10 16:55:30 UTC
 </div>
 </div>
 </body>
