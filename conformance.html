@@ -595,6 +595,11 @@ same value.</p>
 this by setting the global <strong><code>Conventions</code></strong> attribute to the string value
 "CF-1.5".</p>
 </li>
+<li>
+<p>The Conventions attribute may be a single text string containing a list
+of convention names separated by blank space or commas, one of which shall
+be the full CF string as described above.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -701,6 +706,10 @@ name table.</p>
 <p>The legal values for the standard name modifier are contained in
 Appendix C, Standard Name Modifiers.</p>
 </li>
+<li>
+<p>Use of the <strong><code>standard_name modifiers</code></strong> <strong><code>status_flag</code></strong> and <strong><code>number_of_observations</code></strong>
+is deprecated, and the corresponding <strong><code>standard_names</code></strong> are recommended instead.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -801,6 +810,11 @@ particular value of the <strong><code>axis</code></strong> attribute.</p>
 insensitive).</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p><strong>Recommendations:</strong>
+* The <strong><code>positive</code></strong> attribute should be consistent with the sign convention implied by the
+definition of the <strong><code>standard_name</code></strong>, if both are provided.</p>
 </div>
 </div>
 <div class="sect2">
@@ -998,6 +1012,13 @@ specified in Table 1 of Appendix F.<br></p>
 <li>
 <p>If present, the <strong><code>crs_wkt</code></strong> attribute must be a text string conforming to
 the CRS WKT specification described in reference [OGC_CTS].</p>
+</li>
+<li>
+<p><strong><code>reference_ellipsoid_name</code></strong>, <strong><code>prime_meridian_name</code></strong>, <strong><code>horizontal_datum_name</code></strong> and
+<strong><code>geographic_crs_name</code></strong> must be all defined if any one is defined.</p>
+</li>
+<li>
+<p>If <strong><code>projected_crs_name</code></strong> is defined then <strong><code>geographic_crs_name</code></strong> must be also.</p>
 </li>
 </ul>
 </div>
@@ -1262,7 +1283,7 @@ sizes minus 1 (CDL index conventions).</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-05-10 16:58:42 UTC
+Last updated 2017-05-10 17:05:52 UTC
 </div>
 </div>
 </body>
