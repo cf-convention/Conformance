@@ -1120,8 +1120,19 @@ number of vertices in a cell.</p>
 <p>A boundary variable must be a numeric data type.</p>
 </li>
 <li>
-<p>If a boundary variable has <strong><code>units</code></strong> or <strong><code>standard_name</code></strong> attributes, they
-must agree with those of its associated variable.</p>
+<p>If a boundary variable has <strong><code>units</code></strong>,<strong><code>standard_name</code></strong>, <strong><code>axis</code></strong>, <strong><code>positive</code></strong>, <strong><code>calendar</code></strong>,
+<strong><code>leap_month</code></strong>, <strong><code>leap_year</code></strong> or <strong><code>month_lengths</code></strong> attributes, they must agree with those of its associated variable.</p>
+</li>
+<li>
+<p>Starting with version 1.7, a boundary variable must have a <strong><code>formula_terms</code></strong> attribute when it contains bounds for a parametric
+vertical coordinate variable that has a <strong><code>formula_terms</code></strong> attribute. In this case the same terms and named variables must appear in
+both except for terms that depend on the vertical dimension. For such terms the variable name appearing in the boundary variable&#8217;s
+<strong><code>formula_terms</code></strong> attribute must differ from that found in the <strong><code>formula_terms</code></strong> attribute of the coordinate variable itself. The boundary
+variable of the <strong><code>formula_terms</code></strong> variable must have the same dimensions as the <strong><code>formula_terms</code></strong> variable, plus a trailing dimension (CDL order)
+for the maximum number of vertices in a cell, which must be the same as the trailing dimension of the boundary variable of the parametric
+vertical coordinate variable. If a named variable in the <strong><code>formula_terms</code></strong> attribute of the vertical coordinate variable depends on the vertical
+dimension and is a coordinate, scalar coordinate or auxiliary coordinate variable then its bounds attribute must be consistent with the equivalent
+term in <strong><code>formula_terms</code></strong> attribute of the boundary variable.</p>
 </li>
 </ul>
 </div>
@@ -1136,8 +1147,8 @@ should lie within, or on the boundary, of the cells specified by the
 associated boundary variable.</p>
 </li>
 <li>
-<p>Boundary variables should not have the <strong><code>_FillValue</code></strong> or <strong><code>missing_value</code></strong>
-attributes.</p>
+<p>Boundary variables should not have the <strong><code>_FillValue</code></strong>, <strong><code>missing_value</code></strong>, <strong><code>units</code></strong>, <strong><code>standard_name</code></strong>, <strong><code>axis</code></strong>, <strong><code>positive</code></strong>,
+<strong><code>calendar</code></strong>, <strong><code>leap_month</code></strong>, <strong><code>leap_year</code></strong> or <strong><code>month_lengths</code></strong> attributes.</p>
 </li>
 </ul>
 </div>
@@ -1334,7 +1345,7 @@ sizes minus 1 (CDL index conventions).</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-05-11 19:37:32 UTC
+Last updated 2017-06-29 22:25:35 UTC
 </div>
 </div>
 </body>
