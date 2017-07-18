@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.5">
-<title>CF Conformance Requirements and Recommendations 1.7 draft</title>
+<meta name="generator" content="Asciidoctor 1.5.6">
+<title>Untitled</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -89,13 +89,12 @@ strong,b{font-weight:bold;line-height:inherit}
 small{font-size:60%;line-height:inherit}
 code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
 ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
-ul,ol,ul.no-bullet,ol.no-bullet{margin-left:1.5em}
+ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
 ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
 ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
-ul.no-bullet{list-style:none}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -131,7 +130,11 @@ strong strong{font-weight:400}
 kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
 .keyseq kbd:first-child{margin-left:0}
 .keyseq kbd:last-child{margin-right:0}
-.menuseq,.menu{color:rgba(0,0,0,.8)}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
 b.button:before,b.button:after{position:relative;top:-1px;font-weight:400}
 b.button:before{content:"[";padding:0 3px 0 2px}
 b.button:after{content:"]";padding:0 2px 0 3px}
@@ -198,7 +201,7 @@ table.tableblock>caption.title{white-space:nowrap;overflow:visible;max-width:0}
 table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inherit}
 .admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
 .admonitionblock>table td.icon{text-align:center;width:80px}
-.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon img{max-width:initial}
 .admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
 .admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #ddddd8;color:rgba(0,0,0,.6)}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
@@ -254,13 +257,13 @@ table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
 table.tableblock{max-width:100%;border-collapse:separate}
 table.tableblock td>.paragraph:last-child p>p:last-child,table.tableblock th>p:last-child,table.tableblock td>p:last-child{margin-bottom:0}
 table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
-table.grid-all th.tableblock,table.grid-all td.tableblock{border-width:0 1px 1px 0}
-table.grid-all tfoot>tr>th.tableblock,table.grid-all tfoot>tr>td.tableblock{border-width:1px 1px 0 0}
-table.grid-cols th.tableblock,table.grid-cols td.tableblock{border-width:0 1px 0 0}
-table.grid-all *>tr>.tableblock:last-child,table.grid-cols *>tr>.tableblock:last-child{border-right-width:0}
-table.grid-rows th.tableblock,table.grid-rows td.tableblock{border-width:0 0 1px 0}
-table.grid-all tbody>tr:last-child>th.tableblock,table.grid-all tbody>tr:last-child>td.tableblock,table.grid-all thead:last-child>tr>th.tableblock,table.grid-rows tbody>tr:last-child>th.tableblock,table.grid-rows tbody>tr:last-child>td.tableblock,table.grid-rows thead:last-child>tr>th.tableblock{border-bottom-width:0}
-table.grid-rows tfoot>tr>th.tableblock,table.grid-rows tfoot>tr>td.tableblock{border-width:1px 0 0 0}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px 0}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
 table.frame-all{border-width:1px}
 table.frame-sides{border-width:0 1px}
 table.frame-topbot{border-width:1px 0}
@@ -281,10 +284,12 @@ ul li ol{margin-left:1.5em}
 dl dd{margin-left:1.125em}
 dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
 ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
-ul.unstyled,ol.unnumbered,ul.checklist,ul.none{list-style-type:none}
-ul.unstyled,ol.unnumbered,ul.checklist{margin-left:.625em}
-ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1em;font-size:.85em}
-ul.checklist li>p:first-child>input[type="checkbox"]:first-child{width:1em;position:relative;top:1px}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
 ul.inline{margin:0 auto .625em auto;margin-left:-1.375em;margin-right:0;padding:0;list-style:none;overflow:hidden}
 ul.inline>li{list-style:none;float:left;margin-left:1.375em;display:block}
 ul.inline>li>*{display:block}
@@ -301,7 +306,8 @@ ol.lowergreek{list-style-type:lower-greek}
 td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
 td.hdlist1{font-weight:bold;padding-bottom:1.25em}
 .literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
-.colist>table tr>td:first-of-type{padding:0 .75em;line-height:1}
+.colist>table tr>td:first-of-type{padding:.4em .75em 0 .75em;line-height:1;vertical-align:top}
+.colist>table tr>td:first-of-type img{max-width:initial}
 .colist>table tr>td:last-of-type{padding:.25em 0}
 .thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
 .imageblock.left,.imageblock[style*="float: left"]{margin:.25em .625em 1.25em 0}
@@ -364,6 +370,7 @@ div.unbreakable{page-break-inside:avoid}
 .yellow{color:#bfbf00}
 .yellow-background{background-color:#fafa00}
 span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
 .admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
 .admonitionblock td.icon .icon-note:before{content:"\f05a";color:#19407c}
 .admonitionblock td.icon .icon-tip:before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
@@ -422,930 +429,590 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="cf-conformance-requirements-and-recommendations-1.7-draft">CF Conformance Requirements and Recommendations 1.7 draft</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>The following is a list of requirements and recommendations for a CF
+<div id="cf-conformance-requirements-and-recommendations-1.7" class="paragraph">
+<p>CF Conformance Requirements and Recommendations 1.7</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>* The following is a list of requirements and recommendations for a CF
 conforming netCDF file. They are organized by the section of the CF
-document that they pertain to.</p>
-</li>
-<li>
-<p>This document is intended to be a concise summary of the
-<a href="http://cfconventions.org/cf-conventions/cf-conventions.html">CF Conventions document</a>.
+document that they pertain to.
+
+* This document is intended to be a concise summary of the
+http://cfconventions.org/cf-conventions/cf-conventions.html[CF Conventions document].
 If there are any discrepencies between the two, the
-conventions document is the ultimate authority.</p>
-</li>
-<li>
-<p>This document will updated as required to correct mistakes or add new
-material required for completeness or clarity.</p>
-</li>
-</ul>
-</div>
-<div class="sect2">
-<h3 id="filename">2.1 Filename</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Filename must have ".nc" suffix.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="data-types">2.2 Data Types</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>CF attributes that take string values must be 1D character arrays.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="naming-conventions">2.3 Naming Conventions</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Variable, dimension and attribute names must begin with a letter and
-be composed of letters, digits, and underscores.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Recommendations:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>No two variable names should be identical when case is ignored.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="dimensions">2.4 Dimensions</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The dimensions of a variable must all have different names.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Recommendations:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>If any or all of the dimensions of a variable have the interpretations
+conventions document is the ultimate authority.
+
+* This document will updated as required to correct mistakes or add new
+material required for completeness or clarity.
+
+
+[[filename]]
+=== 2.1 Filename
+
+*Requirements:*
+
+* Filename must have ".nc" suffix.
+
+[[section]]
+
+[[data-types]]
+=== 2.2 Data Types
+
+*Requirements:*
+
+* CF attributes that take string values must be 1D character arrays.
+
+[[section-1]]
+
+[[naming-conventions]]
+=== 2.3 Naming Conventions
+
+*Requirements:*
+
+* Variable, dimension and attribute names must begin with a letter and
+be composed of letters, digits, and underscores.
+
+*Recommendations:*
+
+* No two variable names should be identical when case is ignored.
+
+[[section-2]]
+
+[[dimensions]]
+=== 2.4 Dimensions
+
+*Requirements:*
+
+* The dimensions of a variable must all have different names.
+
+*Recommendations:*
+
+* If any or all of the dimensions of a variable have the interpretations
 (as given by their units or axis attribute) of time (T), height or depth
 (Z), latitude (Y), or longitude (X) then those dimensions should appear
 in the relative order T, then Z, then Y, then X in the CDL definition
-corresponding to the file.</p>
-</li>
-<li>
-<p>In files that are meant to conform to the COARDS subset of CF, any
+corresponding to the file.
+* In files that are meant to conform to the COARDS subset of CF, any
 dimensions of a variable other than space and time dimensions should be
 added "to the left" of the space and time dimensions as represented in
-CDL.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="missing-data-valid-and-actual-range-of-data">2.5.1 Missing data, valid and actual range of data</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong><code>valid_range</code></strong> attribute must not be present if the <strong><code>valid_min</code></strong> and/or
-<strong><code>valid_max</code></strong> attributes are present.</p>
-</li>
-<li>
-<p>The <strong><code>_FillValue</code></strong> attribute must be the same type as its associated
-variable.</p>
-</li>
-<li>
-<p>The <strong><code>missing_value</code></strong> attribute must be the same type as its associated
-variable.</p>
-</li>
-<li>
-<p>The <strong><code>actual_range</code></strong> attribute must be of the same type as its associated
-variable unless there is a <strong><code>scale_factor</code></strong> and/or <strong><code>add_offset</code></strong> attribute, in
-which case it must be of the same type as those attributes.</p>
-</li>
-<li>
-<p>The <strong><code>actual_range</code></strong> attribute must have two elements, of which the first
+CDL.
+
+[[section-3]]
+
+[[missing-data-valid-and-actual-range-of-data]]
+=== 2.5.1 Missing data, valid and actual range of data
+
+*Requirements:*
+
+* The **`valid_range`** attribute must not be present if the **`valid_min`** and/or
+**`valid_max`** attributes are present.
+* The **`_FillValue`** attribute must be the same type as its associated
+variable.
+* The **`missing_value`** attribute must be the same type as its associated
+variable.
+* The **`actual_range`** attribute must be of the same type as its associated
+variable unless there is a **`scale_factor`** and/or **`add_offset`** attribute, in
+which case it must be of the same type as those attributes.
+* The **`actual_range`** attribute must have two elements, of which the first
 exactly equals the minimum non-missing value occurring in the associated
-variable after any <strong><code>scale_factor</code></strong> and <strong><code>add_offset</code></strong> are applied, and the
-second exactly equals the maximum value in the same way.</p>
-</li>
-<li>
-<p>There must not be an <strong><code>actual_range</code></strong> attribute if all the data values of
-the associated variable equal the missing value.</p>
-</li>
-<li>
-<p>If both the <strong><code>actual_range</code></strong> and <strong><code>valid_range/valid_min/valid_max</code></strong> are
-specified, the values of the <strong><code>actual_range</code></strong> must be valid values.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Recommendations:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The value of the <strong><code>_FillValue</code></strong> attribute should not be within a specified
-valid range.</p>
-</li>
-<li>
-<p>If both <strong><code>missing_value</code></strong> and <strong><code>_FillValue</code></strong> be used, they should have the
-same value.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="identification-of-conventions">2.6.1 Identification of Conventions</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Files that conform to the CF version 1.7 conventions must indicate
-this by setting the global <strong><code>Conventions</code></strong> attribute to the string value
-"CF-1.7".</p>
-</li>
-<li>
-<p>The <strong><code>Conventions</code></strong> attribute may be a single text string containing a list
+variable after any **`scale_factor`** and **`add_offset`** are applied, and the
+second exactly equals the maximum value in the same way.
+* There must not be an **`actual_range`** attribute if all the data values of
+the associated variable equal the missing value.
+* If both the **`actual_range`** and **`valid_range/valid_min/valid_max`** are
+specified, the values of the **`actual_range`** must be valid values.
+
+*Recommendations:*
+
+* The value of the **`_FillValue`** attribute should not be within a specified
+valid range.
+* If both **`missing_value`** and **`_FillValue`** be used, they should have the
+same value.
+
+[[section-4]]
+
+[[identification-of-conventions]]
+=== 2.6.1 Identification of Conventions
+
+*Requirements:*
+
+* Files that conform to the CF version 1.7 conventions must indicate
+this by setting the global **`Conventions`** attribute to the string value
+"CF-1.7".
+* The **`Conventions`** attribute may be a single text string containing a list
 of convention names separated by blank space or commas, one of which shall
-be the full CF string as described above.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="description-of-file-contents">2.6.2 Description of File Contents</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong><code>title</code></strong>, <strong><code>history</code></strong>, <strong><code>institution</code></strong>, <strong><code>source</code></strong>, <strong><code>references</code></strong>, and <strong><code>comment</code></strong>
-attributes are all type string.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Recommendations:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong><code>title</code></strong> and <strong><code>history</code></strong> attributes are only defined as global
+be the full CF string as described above.
+
+[[section-5]]
+
+[[description-of-file-contents]]
+=== 2.6.2 Description of File Contents
+
+*Requirements:*
+
+* The **`title`**, **`history`**, **`institution`**, **`source`**, **`references`**, and **`comment`**
+attributes are all type string.
+
+*Recommendations:*
+
+* The **`title`** and **`history`** attributes are only defined as global
 attributes. If they are used as per variable attributes a CF compliant
 application should treat them exactly as it would treat any other
-unrecognized attribute.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_2_6_3_external_variables">2.6.3 External variables</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong><code>external_variables</code></strong> attribute is of string type and contains a blank-separated
-list of variable names.</p>
-</li>
-<li>
-<p>No variable named by <strong><code>external_variables</code></strong> is allowed in the file.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="description-of-the-data">3 Description of the Data</h3>
-<div class="paragraph">
-<p><strong>Recommendations:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>All variables should use either the <strong><code>long_name</code></strong> or the <strong><code>standard_name</code></strong>
+unrecognized attribute.
+
+=== 2.6.3 External variables
+
+*Requirements:*
+
+* The **`external_variables`** attribute is of string type and contains a blank-separated
+list of variable names.
+* No variable named by **`external_variables`** is allowed in the file.
+
+
+[[section-6]]
+
+[[description-of-the-data]]
+=== 3 Description of the Data
+
+*Recommendations:*
+
+* All variables should use either the **`long_name`** or the **`standard_name`**
 attributes to describe their contents. Exceptions are boundary and
-climatology variables.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="units">3.1 Units</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong><code>units</code></strong> attribute is required for all variables that represent
+climatology variables.
+
+[[section-7]]
+
+[[units]]
+=== 3.1 Units
+
+*Requirements:*
+
+* The **`units`** attribute is required for all variables that represent
 dimensional quantities (except for boundary variables defined in
-<a href="http://cfconventions.org/cf-conventions/cf-conventions.html#cell-boundaries">section 7.1</a>
+http://cfconventions.org/cf-conventions/cf-conventions.html#cell-boundaries[section 7.1]
 and climatology variables defined in
-<a href="http://cfconventions.org/cf-conventions/cf-conventions.html#climatological-statistics">section 7.4</a>
-).</p>
-</li>
-<li>
-<p>The type of the <strong><code>units</code></strong> attribute is a string that must be recognizable
-by the udunits package. Exceptions are the units <strong><code>level, layer, and
-sigma_level</code></strong>.</p>
-</li>
-<li>
-<p>The <strong><code>units</code></strong> of a variable that specifies a <strong><code>standard_name</code></strong> must be
+http://cfconventions.org/cf-conventions/cf-conventions.html#climatological-statistics[section 7.4]
+).
+* The type of the **`units`** attribute is a string that must be recognizable
+by the udunits package. Exceptions are the units **`level, layer, and
+sigma_level`**.
+* The **`units`** of a variable that specifies a **`standard_name`** must be
 physically equivalent to the canonical units given in the standard name
-table, as modified by the <strong><code>standard_name</code></strong> modifier, if there is one,
+table, as modified by the **`standard_name`** modifier, if there is one,
 according to Appendix C, and then modified by all the methods listed in
-order by the <strong><code>cell_methods</code></strong> attribute, if one is present, according to
-Appendix E.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Recommendations:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The units <strong><code>level</code></strong>, <strong><code>layer</code></strong>, and <strong><code>sigma_level</code></strong> are deprecated.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="standard-name">3.3 Standard Name</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong><code>standard_name</code></strong> attribute takes a string value comprised of a
+order by the **`cell_methods`** attribute, if one is present, according to
+Appendix E.
+
+*Recommendations:*
+
+* The units **`level`**, **`layer`**, and **`sigma_level`** are deprecated.
+
+[[section-8]]
+
+[[standard-name]]
+=== 3.3 Standard Name
+
+*Requirements:*
+
+* The **`standard_name`** attribute takes a string value comprised of a
 standard name optionally followed by one or more blanks and a standard
-name modifier.</p>
-</li>
-<li>
-<p>The legal values for the standard name are contained in the standard
-name table.</p>
-</li>
-<li>
-<p>The legal values for the standard name modifier are contained in
-Appendix C, Standard Name Modifiers.</p>
-</li>
-<li>
-<p>If a variable has a <strong><code>standard_name</code></strong> of <strong><code>region</code></strong> or <strong><code>area_type</code></strong>, it must have value(s)
-from the permitted list.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Recommendataions:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Use of the <strong><code>standard_name</code></strong> modifiers <strong><code>status_flag</code></strong> and <strong><code>number_of_observations</code></strong>
-is deprecated, and the corresponding <strong><code>standard_names</code></strong> are recommended instead.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="flags">3.5 Flags</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong><code>flag_values</code></strong> attribute must have the same type as the variable to
-which it is attached.</p>
-</li>
-<li>
-<p>If the <strong><code>flag_values</code></strong> attribute is present then the <strong><code>flag_meanings</code></strong>
-attribute must be specified.</p>
-</li>
-<li>
-<p>The type of the <strong><code>flag_meanings</code></strong> attribute is a string whose value is a
+name modifier.
+* The legal values for the standard name are contained in the standard
+name table.
+* The legal values for the standard name modifier are contained in
+Appendix C, Standard Name Modifiers.
+* If a variable has a **`standard_name`** of **`region`** or **`area_type`**, it must have value(s)
+from the permitted list.
+
+*Recommendataions:*
+
+* Use of the **`standard_name`** modifiers **`status_flag`** and **`number_of_observations`**
+is deprecated, and the corresponding **`standard_names`** are recommended instead.
+
+[[section-9]]
+
+[[flags]]
+=== 3.5 Flags
+
+*Requirements:*
+
+* The **`flag_values`** attribute must have the same type as the variable to
+which it is attached.
+* If the **`flag_values`** attribute is present then the **`flag_meanings`**
+attribute must be specified.
+* The type of the **`flag_meanings`** attribute is a string whose value is a
 blank separated list of words or phrases,  each consisting of characters
 from the alphanumeric set and the following five: '_', '-', '.', '+',
-'@'.</p>
-</li>
-<li>
-<p>The number of <strong><code>flag_values</code></strong> attribute values must equal the number of
-words or phrases appearing in the <strong><code>flag_meanings</code></strong> string.</p>
-</li>
-<li>
-<p>The number of <strong><code>flag_masks</code></strong> attribute values must equal the number of
-words or phrases appearing in the <strong><code>flag_meanings</code></strong> string.</p>
-</li>
-<li>
-<p>Variables with a <strong><code>flag_masks</code></strong> attribute must have a type that is
+'@'.
+* The number of **`flag_values`** attribute values must equal the number of
+words or phrases appearing in the **`flag_meanings`** string.
+* The number of **`flag_masks`** attribute values must equal the number of
+words or phrases appearing in the **`flag_meanings`** string.
+* Variables with a **`flag_masks`** attribute must have a type that is
 compatible with bit field expression (char, byte, short and int), not
-floating-point (float, real, double), and the <strong><code>flag_masks</code></strong> attribute must
-have the same type.</p>
-</li>
-<li>
-<p>The <strong><code>flag_masks</code></strong> attribute values must be non-zero.</p>
-</li>
-<li>
-<p>The <strong><code>flag_values</code></strong> attribute values must be mutually exclusive among the
-set of <strong><code>flag_values</code></strong> attribute values defined for that variable.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Recommendations:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>When <strong><code>flag_masks</code></strong> and <strong><code>flag_values</code></strong> are both defined, the Boolean AND of
-each entry in <strong><code>flag_values</code></strong> with its corresponding entry in <strong><code>flag_masks</code></strong>
-should equal the <strong><code>flag_values</code></strong> entry, ie, the mask selects all the bits
-required to express the value.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="coordinate-types">4 Coordinate Types</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong><code>axis</code></strong> attribute may only be attached to a coordinate variable.</p>
-</li>
-<li>
-<p>The only legal values of axis are <strong><code>X</code></strong>, <strong><code>Y</code></strong>, <strong><code>Z</code></strong>, and <strong><code>T</code></strong> (case insensitive).</p>
-</li>
-<li>
-<p>The <strong><code>axis</code></strong> attribute must be consistent with the coordinate type deduced
-from <strong><code>units</code></strong> and <strong><code>positive</code></strong>.</p>
-</li>
-<li>
-<p>The <strong><code>axis</code></strong> attribute is not allowed for auxiliary coordinate variables.</p>
-</li>
-<li>
-<p>A data variable must not have more than one coordinate variable with a
-particular value of the <strong><code>axis</code></strong> attribute.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="vertical-height-or-depth-coordinate">4.3 Vertical (height or depth) Coordinate</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The only legal values for the <strong><code>positive</code></strong> attribute are <strong><code>up</code></strong> or <strong><code>down</code></strong> (case
-insensitive).</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Recommendations:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong><code>positive</code></strong> attribute should be consistent with the sign convention implied by the
-definition of the <strong><code>standard_name</code></strong>, if both are provided.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="dimensionless-vertical-coordinates">4.3.3 Parameterized Vertical Coordinate</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong><code>formula_terms</code></strong> attribute is only allowed on a coordinate variable
-which has a <strong><code>standard_name</code></strong> listed in Appendix C.</p>
-</li>
-<li>
-<p>The type of the <strong><code>formula_terms</code></strong> attribute is a string whose value is
-list of blank separated word pairs in the form <strong><code>term: var</code></strong>. The legal
-values <strong><code>term</code></strong> are contained in Appendix C for each valid <strong><code>standard_name</code></strong>.
-The values of <strong><code>var</code></strong> must be variables that exist in the file.</p>
-</li>
-<li>
-<p>Where indicated by the appropriate definition in Appendix D, the <strong><code>standard_name</code></strong>
-attributes of variables named by the <strong><code>formula_terms</code></strong> attribute must be consistent
-with the <strong><code>standard_name</code></strong> of the coordinate variable it is attached to, according to
-the appropriate definition in Appendix D.</p>
-</li>
-<li>
-<p>The <strong><code>computed_standard_name</code></strong> attribute is only allowed on a coordinate variable
-which has a <strong><code>formula_terms</code></strong> attribute.</p>
-</li>
-<li>
-<p>The <strong><code>computed_standard_name</code></strong> attribute is a string whose value must be consistent
-with the <strong><code>standard_name</code></strong> of the coordinate variable it is attached to, and in some cases
-also with the <strong><code>standard_name</code></strong> attributes of variables named by the <strong><code>formula_terms</code></strong> attribute,
-according to the appropriate definition in Appendix D.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="time-coordinate">4.4 Time Coordinate</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The time units of a time coordinate variable must contain a reference
-time.</p>
-</li>
-<li>
-<p>The reference time of a time coordinate variable must be a legal time
-in the specified calendar.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Recommendations:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The use of a reference time in the year 0 to indicate climatological
+floating-point (float, real, double), and the **`flag_masks`** attribute must
+have the same type.
+* The **`flag_masks`** attribute values must be non-zero.
+* The **`flag_values`** attribute values must be mutually exclusive among the
+set of **`flag_values`** attribute values defined for that variable.
+
+*Recommendations:*
+
+* When **`flag_masks`** and **`flag_values`** are both defined, the Boolean AND of
+each entry in **`flag_values`** with its corresponding entry in **`flag_masks`**
+should equal the **`flag_values`** entry, ie, the mask selects all the bits
+required to express the value.
+
+[[section-10]]
+
+[[coordinate-types]]
+=== 4 Coordinate Types
+
+*Requirements:*
+
+* The **`axis`** attribute may only be attached to a coordinate variable.
+* The only legal values of axis are **`X`**, **`Y`**, **`Z`**, and **`T`** (case insensitive).
+* The **`axis`** attribute must be consistent with the coordinate type deduced
+from **`units`** and **`positive`**.
+* The **`axis`** attribute is not allowed for auxiliary coordinate variables.
+* A data variable must not have more than one coordinate variable with a
+particular value of the **`axis`** attribute.
+
+[[section-11]]
+
+[[vertical-height-or-depth-coordinate]]
+=== 4.3 Vertical (height or depth) Coordinate
+
+*Requirements:*
+
+* The only legal values for the **`positive`** attribute are **`up`** or **`down`** (case
+insensitive).
+
+*Recommendations:*
+
+* The **`positive`** attribute should be consistent with the sign convention implied by the
+definition of the **`standard_name`**, if both are provided.
+
+[[section-12]]
+
+[[dimensionless-vertical-coordinates]]
+=== 4.3.3 Parameterized Vertical Coordinate
+
+*Requirements:*
+
+* The **`formula_terms`** attribute is only allowed on a coordinate variable
+which has a **`standard_name`** listed in Appendix C.
+* The type of the **`formula_terms`** attribute is a string whose value is
+list of blank separated word pairs in the form **`term: var`**. The legal
+values **`term`** are contained in Appendix C for each valid **`standard_name`**.
+The values of **`var`** must be variables that exist in the file.
+* Where indicated by the appropriate definition in Appendix D, the **`standard_name`**
+attributes of variables named by the **`formula_terms`** attribute must be consistent
+with the **`standard_name`** of the coordinate variable it is attached to, according to
+the appropriate definition in Appendix D.
+* The **`computed_standard_name`** attribute is only allowed on a coordinate variable
+which has a **`formula_terms`** attribute.
+* The **`computed_standard_name`** attribute is a string whose value must be consistent
+with the **`standard_name`** of the coordinate variable it is attached to, and in some cases
+also with the **`standard_name`** attributes of variables named by the **`formula_terms`** attribute,
+according to the appropriate definition in Appendix D.
+
+
+[[section-13]]
+
+[[time-coordinate]]
+=== 4.4 Time Coordinate
+
+*Requirements:*
+
+* The time units of a time coordinate variable must contain a reference
+time.
+* The reference time of a time coordinate variable must be a legal time
+in the specified calendar.
+
+*Recommendations:*
+
+* The use of a reference time in the year 0 to indicate climatological
 time is deprecated. This restriction only applies to the real-world
-calendar as used by the udunits package.</p>
-</li>
-<li>
-<p>Units of <strong><code>year</code></strong> and <strong><code>month</code></strong> and any equivalent units should be used with
-caution.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="calendar">4.4.1 Calendar</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The attributes <strong><code>calendar</code></strong>, <strong><code>month_lengths</code></strong>, <strong><code>leap_year</code></strong>, and <strong><code>leap_month</code></strong> may
-only be attached to time coordinate variables.</p>
-</li>
-<li>
-<p>The standardized values of the calendar attribute are <strong><code>gregorian</code></strong>,
-<strong><code>standard</code></strong>, <strong><code>proleptic_gregorian</code></strong>, <strong><code>noleap</code></strong>, <strong><code>365_day</code></strong>, <strong><code>all_leap</code></strong>, <strong><code>366_day</code></strong>,
-<strong><code>360_day</code></strong>, <strong><code>julian</code></strong>, and <strong><code>none</code></strong> (case insensitive). If the <strong><code>calendar</code></strong> attribute
-is given a non-standard value, then the attribute <strong><code>month_lengths</code></strong> is
-required, along with <strong><code>leap_year</code></strong> and <strong><code>leap_month</code></strong> as appropriate.</p>
-</li>
-<li>
-<p>The type of the <strong><code>month_lengths</code></strong> attribute must be an integer array of
-size 12.</p>
-</li>
-<li>
-<p>The values of the <strong><code>leap_month</code></strong> attribute must be in the range 1-12.</p>
-</li>
-<li>
-<p>The values of the <strong><code>leap_year</code></strong> and <strong><code>leap_month</code></strong> attributes are integer
-scalars.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Recommendations:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The attribute <strong><code>leap_month</code></strong> should not appear unless the attribute
-<strong><code>leap_year</code></strong> is present.</p>
-</li>
-<li>
-<p>The time coordinate should not cross the date 1582-10-15 when the
-default mixed Gregorian/Julian calendar is in use.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="coordinate-systems">5 Coordinate Systems</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>All of a variable&#8217;s dimensions that are latitude, longitude, vertical,
-or time dimensions must have corresponding coordinate variables.</p>
-</li>
-<li>
-<p>A coordinate variable must have values that are strictly monotonic
-(increasing or decreasing).</p>
-</li>
-<li>
-<p>A coordinate variable must not have the <strong><code>_FillValue</code></strong> or <strong><code>missing_value</code></strong>
-attributes.</p>
-</li>
-<li>
-<p>The type of the <strong><code>coordinates</code></strong> attribute is a string whose value is a
+calendar as used by the udunits package.
+* Units of **`year`** and **`month`** and any equivalent units should be used with
+caution.
+
+[[section-14]]
+
+[[calendar]]
+=== 4.4.1 Calendar
+
+*Requirements:*
+
+* The attributes **`calendar`**, **`month_lengths`**, **`leap_year`**, and **`leap_month`** may
+only be attached to time coordinate variables.
+* The standardized values of the calendar attribute are **`gregorian`**,
+**`standard`**, **`proleptic_gregorian`**, **`noleap`**, **`365_day`**, **`all_leap`**, **`366_day`**,
+**`360_day`**, **`julian`**, and **`none`** (case insensitive). If the **`calendar`** attribute
+is given a non-standard value, then the attribute **`month_lengths`** is
+required, along with **`leap_year`** and **`leap_month`** as appropriate.
+* The type of the **`month_lengths`** attribute must be an integer array of
+size 12.
+* The values of the **`leap_month`** attribute must be in the range 1-12.
+* The values of the **`leap_year`** and **`leap_month`** attributes are integer
+scalars.
+
+*Recommendations:*
+
+* The attribute **`leap_month`** should not appear unless the attribute
+**`leap_year`** is present.
+* The time coordinate should not cross the date 1582-10-15 when the
+default mixed Gregorian/Julian calendar is in use.
+
+[[section-15]]
+
+[[coordinate-systems]]
+=== 5 Coordinate Systems
+
+*Requirements:*
+
+* All of a variable's dimensions that are latitude, longitude, vertical,
+or time dimensions must have corresponding coordinate variables.
+* A coordinate variable must have values that are strictly monotonic
+(increasing or decreasing).
+* A coordinate variable must not have the **`_FillValue`** or **`missing_value`**
+attributes.
+* The type of the **`coordinates`** attribute is a string whose value is a
 blank separated list of variable names. All specified variable names
-must exist in the file.</p>
-</li>
-<li>
-<p>The dimensions of each auxiliary coordinate must be a subset of the
+must exist in the file.
+* The dimensions of each auxiliary coordinate must be a subset of the
 dimensions of the variable they are attached to, with two exceptions.
 First, a label variable which will have a trailing dimension for the
 maximum string length. Second a ragged array (Chapter 9, Discrete
 sampling geometries and Appendix H) uses special, more indirect, methods
-to connect the data and coordinates.<br></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Recommendations:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The name of a multidimensional coordinate variable should not match
-the name of any of its dimensions.</p>
-</li>
-<li>
-<p>All horizontal coordinate variables (in the Unidata sense) should have
-an <strong><code>axis</code></strong> attribute.</p>
-</li>
-<li>
-<p>All horizontal coordinate variables (in the unidata sense) should have
-an <strong><code>axis</code></strong> attribute.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="grid-mappings-and-projections">5.6 Grid Mappings and Projections</h3>
+to connect the data and coordinates. +
 
-</div>
-<div class="sect2">
-<h3 id="requirements">Requirements:</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>The type of the <strong><code>grid_mapping</code></strong> attribute is a string whose value is of
-the following form, in which brackets indicate optional text:</p>
-<div class="literalblock">
-<div class="content">
-<pre>grid_mapping_name[: coord_var [coord_var ...]] [grid_mapping_name: [coord_var ... ]]</pre>
-</div>
-</div>
-</li>
-<li>
-<p>Note that in its simplest form the attribute comprises just a grid_mapping_name as a single word.</p>
-</li>
-<li>
-<p>Each grid_mapping_name is the name of a variable (known as a grid mapping variable), which must
-exist in the file.</p>
-</li>
-<li>
-<p>Each coord_var is the name of a coordinate variable or auxiliary coordinate variable, which must
-exist in the file. If it is an auxiliary coordinate variable, it must be listed in the coordinates attribute.</p>
-</li>
-<li>
-<p>The grid mapping variables must have the <strong><code>grid_mapping_name</code></strong> attribute.
-The legal values for the <strong><code>grid_mapping_name</code></strong> attribute are contained in
-Appendix F.</p>
-</li>
-<li>
-<p>The data types of the attributes of the grid mapping variable must be
-specified in Table 1 of Appendix F.<br></p>
-</li>
-<li>
-<p>If present, the <strong><code>crs_wkt</code></strong> attribute must be a text string conforming to
-the CRS WKT specification described in reference [OGC_CTS].</p>
-</li>
-<li>
-<p><strong><code>reference_ellipsoid_name</code></strong>, <strong><code>prime_meridian_name</code></strong>, <strong><code>horizontal_datum_name</code></strong> and
-<strong><code>geographic_crs_name</code></strong> must be all defined if any one is defined.</p>
-</li>
-<li>
-<p>If <strong><code>projected_crs_name</code></strong> is defined then <strong><code>geographic_crs_name</code></strong> must be also.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Recommendations:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The grid mapping variables should have 0 dimensions.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="labels">6.1 Labels</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>A variable of character type that is named by a <strong><code>coordinates</code></strong> attribute
+*Recommendations:*
+
+* The name of a multidimensional coordinate variable should not match
+the name of any of its dimensions.
+* All horizontal coordinate variables (in the Unidata sense) should have
+an **`axis`** attribute.
+* All horizontal coordinate variables (in the unidata sense) should have
+an **`axis`** attribute.
+
+[[section-16]]
+
+[[grid-mappings-and-projections]]
+=== 5.6 Grid Mappings and Projections
+
+[[requirements]]
+=== Requirements:
+
+* The type of the **`grid_mapping`** attribute is a string whose value is of
+the following form, in which brackets indicate optional text:
++
+....
+grid_mapping_name[: coord_var [coord_var ...]] [grid_mapping_name: [coord_var ... ]]
+....
+* Note that in its simplest form the attribute comprises just a grid_mapping_name as a single word.
+* Each grid_mapping_name is the name of a variable (known as a grid mapping variable), which must
+exist in the file.
+* Each coord_var is the name of a coordinate variable or auxiliary coordinate variable, which must
+exist in the file. If it is an auxiliary coordinate variable, it must be listed in the coordinates attribute.
+
+
+* The grid mapping variables must have the **`grid_mapping_name`** attribute.
+The legal values for the **`grid_mapping_name`** attribute are contained in
+Appendix F.
+* The data types of the attributes of the grid mapping variable must be
+specified in Table 1 of Appendix F. +
+* If present, the **`crs_wkt`** attribute must be a text string conforming to
+the CRS WKT specification described in reference [OGC_CTS].
+* **`reference_ellipsoid_name`**, **`prime_meridian_name`**, **`horizontal_datum_name`** and
+**`geographic_crs_name`** must be all defined if any one is defined.
+* If **`projected_crs_name`** is defined then **`geographic_crs_name`** must be also.
+
+
+*Recommendations:*
+
+* The grid mapping variables should have 0 dimensions.
+
+[[labels]]
+=== 6.1 Labels
+
+*Requirements:*
+
+* A variable of character type that is named by a **`coordinates`** attribute
 is a label variable. This variable must have one or two dimensions. The
 trailing (CDL order) or sole dimension is for the maximum string length.
 If there are two dimensions, leading dimension (CDL order) must match
-one of those of the data variable.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="cell-boundaries">7.1 Cell Boundaries</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The type of the <strong><code>bounds</code></strong> attribute is a string whose value is a single
-variable name. The specified variable must exist in the file.</p>
-</li>
-<li>
-<p>A boundary variable must have the same dimensions as its associated
+one of those of the data variable.
+
+[[section-17]]
+
+[[cell-boundaries]]
+=== 7.1 Cell Boundaries
+
+*Requirements:*
+
+* The type of the **`bounds`** attribute is a string whose value is a single
+variable name. The specified variable must exist in the file.
+* A boundary variable must have the same dimensions as its associated
 variable, plus have a trailing dimension (CDL order) for the maximum
-number of vertices in a cell.</p>
-</li>
-<li>
-<p>A boundary variable must be a numeric data type.</p>
-</li>
-<li>
-<p>If a boundary variable has <strong><code>units</code></strong>,<strong><code>standard_name</code></strong>, <strong><code>axis</code></strong>, <strong><code>positive</code></strong>, <strong><code>calendar</code></strong>,
-<strong><code>leap_month</code></strong>, <strong><code>leap_year</code></strong> or <strong><code>month_lengths</code></strong> attributes, they must agree with those of its associated variable.</p>
-</li>
-<li>
-<p>Starting with version 1.7, a boundary variable must have a <strong><code>formula_terms</code></strong> attribute when it contains bounds for a parametric
-vertical coordinate variable that has a <strong><code>formula_terms</code></strong> attribute. In this case the same terms and named variables must appear in
-both except for terms that depend on the vertical dimension. For such terms the variable name appearing in the boundary variable&#8217;s
-<strong><code>formula_terms</code></strong> attribute must differ from that found in the <strong><code>formula_terms</code></strong> attribute of the coordinate variable itself. The boundary
-variable of the <strong><code>formula_terms</code></strong> variable must have the same dimensions as the <strong><code>formula_terms</code></strong> variable, plus a trailing dimension (CDL order)
+number of vertices in a cell.
+* A boundary variable must be a numeric data type.
+
+*  If a boundary variable has **`units`**,**`standard_name`**, **`axis`**, **`positive`**, **`calendar`**,
+**`leap_month`**, **`leap_year`** or **`month_lengths`** attributes, they must agree with those of its associated variable.
+* Starting with version 1.7, a boundary variable must have a **`formula_terms`** attribute when it contains bounds for a parametric
+vertical coordinate variable that has a **`formula_terms`** attribute. In this case the same terms and named variables must appear in
+both except for terms that depend on the vertical dimension. For such terms the variable name appearing in the boundary variable's
+**`formula_terms`** attribute must differ from that found in the **`formula_terms`** attribute of the coordinate variable itself. The boundary
+variable of the **`formula_terms`** variable must have the same dimensions as the **`formula_terms`** variable, plus a trailing dimension (CDL order)
 for the maximum number of vertices in a cell, which must be the same as the trailing dimension of the boundary variable of the parametric
-vertical coordinate variable. If a named variable in the <strong><code>formula_terms</code></strong> attribute of the vertical coordinate variable depends on the vertical
+vertical coordinate variable. If a named variable in the **`formula_terms`** attribute of the vertical coordinate variable depends on the vertical
 dimension and is a coordinate, scalar coordinate or auxiliary coordinate variable then its bounds attribute must be consistent with the equivalent
-term in <strong><code>formula_terms</code></strong> attribute of the boundary variable.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Recommendations:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The points specified by a coordinate or auxiliary coordinate variable
+term in **`formula_terms`** attribute of the boundary variable.
+
+
+*Recommendations:*
+
+* The points specified by a coordinate or auxiliary coordinate variable
 should lie within, or on the boundary, of the cells specified by the
-associated boundary variable.</p>
-</li>
-<li>
-<p>Boundary variables should not have the <strong><code>_FillValue</code></strong>, <strong><code>missing_value</code></strong>, <strong><code>units</code></strong>, <strong><code>standard_name</code></strong>, <strong><code>axis</code></strong>, <strong><code>positive</code></strong>,
-<strong><code>calendar</code></strong>, <strong><code>leap_month</code></strong>, <strong><code>leap_year</code></strong> or <strong><code>month_lengths</code></strong> attributes.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="cell-measures">7.2 Cell Measures</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The type of the <strong><code>cell_measures</code></strong> attribute is a string whose value is
-list of blank separated word pairs in the form <strong><code>measure: var</code></strong>. The valid
-values for <strong><code>measure</code></strong> are <strong><code>area</code></strong> or <strong><code>volume</code></strong>. The <strong><code>var</code></strong> token specifies a
-variable that must either exist in the file or be named by the <strong><code>external_variables</code></strong>
+associated boundary variable.
+* Boundary variables should not have the **`_FillValue`**, **`missing_value`**, **`units`**, **`standard_name`**, **`axis`**, **`positive`**,
+**`calendar`**, **`leap_month`**, **`leap_year`** or **`month_lengths`** attributes.
+
+
+[[section-18]]
+
+[[cell-measures]]
+=== 7.2 Cell Measures
+
+*Requirements:*
+
+* The type of the **`cell_measures`** attribute is a string whose value is
+list of blank separated word pairs in the form **`measure: var`**. The valid
+values for **`measure`** are **`area`** or **`volume`**. The **`var`** token specifies a
+variable that must either exist in the file or be named by the **`external_variables`**
 attribute. The dimensions of the variable
-specified by <strong><code>var</code></strong> must be the same as, or be a subset of, the dimensions
-of the variable to which they are related.</p>
-</li>
-<li>
-<p>A measure variable must have units that are consistent with the
+specified by **`var`** must be the same as, or be a subset of, the dimensions
+of the variable to which they are related.
+* A measure variable must have units that are consistent with the
 measure type, i.e., square meters for area measures and cubic meters for
-volume measures.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="cell-methods">7.3 Cell Methods</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The type of the <strong><code>cell_methods</code></strong> attribute is a string whose value is one
-or more blank separated word lists, each with the form</p>
-<div class="literalblock">
-<div class="content">
-<pre>dim1: [dim2: [dim3: ...]] method [where type1 [over type2]] [within|over days|years] [(comment)]</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>where brackets indicate optional words. The valid values for <strong><code>dim1</code></strong> [<strong><code>dim2</code></strong>
-[<strong><code>dim3</code></strong> &#8230;&#8203;] ] are the names of dimensions of the data variable, names of
+volume measures.
+
+[[section-19]]
+
+[[cell-methods]]
+=== 7.3 Cell Methods
+
+*Requirements:*
+
+* The type of the **`cell_methods`** attribute is a string whose value is one
+or more blank separated word lists, each with the form
++
+....
+dim1: [dim2: [dim3: ...]] method [where type1 [over type2]] [within|over days|years] [(comment)]
+....
+where brackets indicate optional words. The valid values for **`dim1`** [**`dim2`**
+[**`dim3`** ...] ] are the names of dimensions of the data variable, names of
 scalar coordinate variables of the data variable, valid standard names,
-or the word <strong><code>area</code></strong>. The valid values of <strong><code>method</code></strong> are contained in Appendix E. The valid values
-for <strong><code>type1</code></strong> are the name of a string-valued auxiliary
-or scalar coordinate variable with a <strong><code>standard_name</code></strong> of <strong><code>area_type</code></strong>, or any
-string value allowed for a variable of <strong><code>standard_name</code></strong> of <strong><code>area_type</code></strong>. If
-<strong><code>type2</code></strong> is a string-valued auxiliary coordinate variable, it is not
+or the word **`area`**. The valid values of **`method`** are contained in Appendix E. The valid values
+for **`type1`** are the name of a string-valued auxiliary
+or scalar coordinate variable with a **`standard_name`** of **`area_type`**, or any
+string value allowed for a variable of **`standard_name`** of **`area_type`**. If
+**`type2`** is a string-valued auxiliary coordinate variable, it is not
 allowed to have a leading dimension (the number of strings) of more than
 one. When the method refers to a climatological time axis, the suffixes
-for within and over may be appended.</p>
-</div>
-</li>
-<li>
-<p>A given dimension name may only occur once in a <strong><code>cell_methods</code></strong> string.
-An exception is a climatological time dimension.</p>
-</li>
-<li>
-<p>The comment, if present, must take the form
-([<strong><code>interval:</code></strong> <em>value</em> <em>unit</em> [<strong><code>interval:</code></strong> &#8230;&#8203;] <strong><code>comment:</code></strong>] <em>remainder</em> )</p>
-<div class="paragraph">
-<p>The <em>remainder</em> text is not standardized. If no <strong><code>interval</code></strong> clauses are
+for within and over may be appended.
+
+* A given dimension name may only occur once in a **`cell_methods`** string.
+An exception is a climatological time dimension.
+* The comment, if present, must take the form
+// We can't use do this as literal text like just above, because remainder
+// is italicized.  To ident, make this a one-item nested list where bullet==none.
+// The back-quote makes it monospaced.
+// whazzit?... [none]
+([**`interval:`** _value_ _unit_ [**`interval:`** ...] **`comment:`**] _remainder_ )
++
+The _remainder_ text is not standardized. If no **`interval`** clauses are
 present, the entire comment is therefore not standardized. There may be
-zero <strong><code>interval</code></strong> clauses, one <strong><code>interval</code></strong> clause, or exactly as many <strong><code>interval</code></strong>
-clauses as there are <strong><code>dims</code></strong> to which the method applies. The <em>value</em> must
-be a valid number and the <em>unit</em> a string that is recognizable by the
-udunits package.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Recommendations:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>If a data variable has any dimensions or scalar coordinate variables
+zero **`interval`** clauses, one **`interval`** clause, or exactly as many **`interval`**
+clauses as there are **`dims`** to which the method applies. The _value_ must
+be a valid number and the _unit_ a string that is recognizable by the
+udunits package.
+
+*Recommendations:*
+
+* If a data variable has any dimensions or scalar coordinate variables
 referring to horizontal, vertical or time dimensions, it should have a
-<strong><code>cell_methods</code></strong> attribute with an entry for each of these spatiotemporal
+**`cell_methods`** attribute with an entry for each of these spatiotemporal
 dimensions or scalar coordinate variables. (The horizontal dimensions
-may be covered by an area entry.)</p>
-</li>
-<li>
-<p>Except for entries whose cell method is point, all numeric coordinate
-variables and scalar coordinate variables named by <strong><code>cell_methods</code></strong> should
-have <strong><code>bounds</code></strong> or <strong><code>climatology</code></strong> attributes.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="climatological-statistics">7.4 Climatological Statistics</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong><code>climatology</code></strong> attribute may only be attached to a time coordinate
-variable.</p>
-</li>
-<li>
-<p>The type of the <strong><code>climatology</code></strong> attribute is a string whose value is a
-single variable name. The specified variable must exist in the file.</p>
-</li>
-<li>
-<p>A climatology variable must have the same dimension as its associated
+may be covered by an area entry.)
+* Except for entries whose cell method is point, all numeric coordinate
+variables and scalar coordinate variables named by **`cell_methods`** should
+have **`bounds`** or **`climatology`** attributes.
+
+
+[[climatological-statistics]]
+=== 7.4 Climatological Statistics
+
+*Requirements:*
+
+* The **`climatology`** attribute may only be attached to a time coordinate
+variable.
+* The type of the **`climatology`** attribute is a string whose value is a
+single variable name. The specified variable must exist in the file.
+* A climatology variable must have the same dimension as its associated
 time coordinate variable, and have a trailing dimension (CDL order) of
-size 2.</p>
-</li>
-<li>
-<p>A climatology variable must be a numeric data type.</p>
-</li>
-<li>
-<p>If a climatology variable has <strong><code>units</code></strong>, <strong><code>standard_name</code></strong>, or <strong><code>calendar</code></strong>
-attributes, they must agree with those of its associated variable.</p>
-</li>
-<li>
-<p>A climatology variable must not have <strong><code>_FillValue</code></strong> or <strong><code>missing_value</code></strong>
-attributes.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="packed-data">8.1 Packed Data</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong><code>scale_factor</code></strong> and <strong><code>add_offset</code></strong> attributes must be the same numeric
-data type.</p>
-</li>
-<li>
-<p>If <strong><code>scale_factor</code></strong> and <strong><code>add_offset</code></strong> are a different type than the variable,
-then they must be either type float or type double.</p>
-</li>
-<li>
-<p>If <strong><code>scale_factor</code></strong> and <strong><code>add_offset</code></strong> are a different type than the variable,
-then the variable must be type byte, short or int.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Recommendations:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>If <strong><code>scale_factor</code></strong> and <strong><code>add_offset</code></strong> are type float, the variable should not
-be of type int.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="compression-by-gathering">8.2 Compression by Gathering</h3>
-<div class="paragraph">
-<p><strong>Requirements:</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>The <strong><code>compress</code></strong> attribute may only be attached to a coordinate variable
-with an integer data type.</p>
-</li>
-<li>
-<p>The type of the <strong><code>compress</code></strong> attribute is a string whose value is a blank
+size 2.
+* A climatology variable must be a numeric data type.
+* If a climatology variable has **`units`**, **`standard_name`**, or **`calendar`**
+attributes, they must agree with those of its associated variable.
+* A climatology variable must not have **`_FillValue`** or **`missing_value`**
+attributes.
+
+[[section-20]]
+
+[[packed-data]]
+=== 8.1 Packed Data
+
+*Requirements:*
+
+* The **`scale_factor`** and **`add_offset`** attributes must be the same numeric
+data type.
+* If **`scale_factor`** and **`add_offset`** are a different type than the variable,
+then they must be either type float or type double.
+* If **`scale_factor`** and **`add_offset`** are a different type than the variable,
+then the variable must be type byte, short or int.
+
+*Recommendations:*
+
+* If **`scale_factor`** and **`add_offset`** are type float, the variable should not
+be of type int.
+
+[[section-21]]
+
+[[compression-by-gathering]]
+=== 8.2 Compression by Gathering
+
+*Requirements:*
+
+* The **`compress`** attribute may only be attached to a coordinate variable
+with an integer data type.
+* The type of the **`compress`** attribute is a string whose value is a blank
 separated list of dimension names. The specified dimensions must exist
-in the file.</p>
-</li>
-<li>
-<p>The values of the associated coordinate variable must be in the range
+in the file.
+* The values of the associated coordinate variable must be in the range
 starting with 0 and going up to the product of the compressed dimension
-sizes minus 1 (CDL index conventions).</p>
-<div class="literalblock">
-<div class="content">
-<pre> </pre>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</div>
+sizes minus 1 (CDL index conventions).
+
+ </pre>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-07-03 23:41:12 UTC
+Last updated 2017-07-18 23:32:03 UTC
 </div>
 </div>
 </body>
